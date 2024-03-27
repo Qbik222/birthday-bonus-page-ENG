@@ -20,23 +20,20 @@ $font-suisseintl-reg: SuisseIntl-Regular, sans-serif
 body
   overscroll-behavior: none
   background: $dark-blue
-
   img
     max-width: 100%
     height: auto
-.dark-theme
-  position: fixed
-  top: 0
-  right: 0
-  z-index: 1000
-  background: white
-  font-size: 16px
 
+// DARK THEME
 .dark
   .fav-page
     background: $dark-theme-color
     .popup
       background: rgba(17,18,24, .7)
+      &__wrap
+        background: $dark-theme-color
+        &:before
+          filter: brightness(10) grayscale(1)
     .main
       &::before
         background: linear-gradient(180deg, rgba(0, 0, 61, 0.00) 0%, #111218 100%)
@@ -45,6 +42,7 @@ body
           background: url("../img/game-bg-dark.png") no-repeat 50% 0/cover
         @media screen and (min-width: 1025px)
           background: url("../img/game-bg-tab-dark.png") no-repeat 50% 0/cover
+// END DARK THEME
 
 .fav-page
   position: relative
@@ -83,7 +81,6 @@ body
       cursor: pointer
       transition: opacity .3s ease-in-out
       user-select: none
-
       &:hover
         opacity: .8
     &__wrap
@@ -136,8 +133,6 @@ body
         &:first-child
           margin-bottom: 22px
     &__btn
-      //width: 335px
-      //height: 70px
       font-size: 18px
       text-transform: uppercase
       letter-spacing: 0.08em
@@ -159,8 +154,6 @@ body
     background: url("../img/main-bg-desk.png") no-repeat 0 20%/contain
     @media screen and (max-width: 1024px)
       background: url("../img/main-bg-tab.png") no-repeat 0 0/contain
-
-    //background: url("../img/main-bg-desk.png") no-repeat 0 0/cover
     &::before
       content: ""
       display: block
@@ -420,9 +413,6 @@ body
         z-index: 1
         @media screen and (max-width: 1220px)
           background: url("../img/machine-ground-tab.png") no-repeat 50% 0/cover
-        //@media screen and (max-width: 700px)
-        //  background: url("../img/machine-ground-mob.png") no-repeat 50% 0/cover
-
       &::after
         content: ""
         display: block
@@ -448,9 +438,6 @@ body
         @media screen and (max-width: 950px) and (orientation: landscape)
           background: url("../img/machine-mob.png") no-repeat 0 0/contain
         &-btn
-          //background: url("../img/machine-btn-bg.svg") no-repeat 0 0/contain
-          //max-width: 266px
-          //min-height: 39px
           position: absolute
           bottom: 280px
           left: 50%
@@ -476,17 +463,13 @@ body
             background: linear-gradient(180deg, #05C48A 0%, rgba(8, 16, 123, 0.00) 100%)
           &:hover
             cursor: pointer
-
             &::after
               background: url("../img/machine-btn-bg-hover.svg") no-repeat 0 0/contain
               filter: drop-shadow(0px 0px 3px #3BFFC3)
-
-              //background: url("../img/machine-btn-bg-hover.png") no-repeat 0 0/contain
             &::before
               background: linear-gradient(180deg, #3BFFC3 0%, rgba(8, 16, 123, 0.00) 100%)
           &:active
             bottom: 278px
-            //filter: drop-shadow(0px 0px 0px #3BFFC3)
           &::after
             content: ""
             display: block
@@ -496,8 +479,6 @@ body
             top: 0
             left: 0
             z-index: -1
-            //filter: none
-            //filter: drop-shadow(0px 0px 19px #3BFFC3)
             background: url("../img/machine-btn-bg.svg") no-repeat 0 0/contain
         .btn-off
           &:active
@@ -509,7 +490,6 @@ body
               background: url("../img/machine-btn-bg.svg") no-repeat 0 0/contain
             &::before
               background: linear-gradient(180deg, #05C48A 0%, rgba(8, 16, 123, 0.00) 100%)
-
         &-text
           color: $white
           font-family: $font-delta-gothic-one-reg
@@ -555,7 +535,6 @@ body
             height: 120px
             width: 58px
             transition: left ease-in-out
-            //animation: hook-wrap-move-down 2s ease-in-out
             display: flex
             flex-direction: column
             justify-content: space-between
@@ -567,11 +546,6 @@ body
               background: url("../img/fasteners.svg") no-repeat 0 0/contain
               width: 19px
               height: 51px
-              //position: absolute
-              //top: -51px
-              //left: 50%
-              //margin: 0 auto
-              //transform: translate(-50%, 0)
             .hook-fastering
               content: ""
               display: block
@@ -582,7 +556,6 @@ body
               top: 51px
               left: 50%
               transform: translate(-50%, 0)
-              //animation: fasteners-move-down 2s ease-in-out
           .hook-position-catch1
               left: 155px
           .hook-position-catch2
@@ -590,7 +563,6 @@ body
           .hook
             position: relative
             background: url("../img/hook.svg") no-repeat 0 0/contain
-            //animation: hook-move 2s ease-in-out
             margin-top: auto
             height: 70px
             width: 58px
@@ -599,13 +571,11 @@ body
           width: 100%
           justify-content: space-between
           transition: opacity .4s ease
-
           .coin
             width: 64px
             height: 57px
             position: relative
             z-index: 0
-            //background: white
           .coin1
             background: url("../img/coin1.svg") no-repeat 0 0/contain
           .coin2
@@ -619,7 +589,6 @@ body
           .coin6
             background: url("../img/coin6.svg") no-repeat 0 0/contain
         .start-text
-          //display: none
           position: absolute
           top: 50%
           left: 10%
@@ -726,6 +695,8 @@ body
       display: flex
       justify-content: space-between
       user-select: none
+      span
+        font-family: $font-suisseintl-semibold
       &:hover
         cursor: pointer
       &::before
@@ -763,18 +734,8 @@ body
           margin-top: 30px
       .sub-text
         margin-left: 10px
-
   .rules
     margin-top: 14px
-
-
-
-
-
-
-
-
-
 
 @keyframes start-text-blick
   0%, 100%
@@ -788,8 +749,6 @@ body
     opacity: 1
   100%
     bottom: 110px
-    //opacity: .6
-
 
 @keyframes coin-disappearance
   0%
@@ -799,13 +758,6 @@ body
     transform: scale(1.2)
     opacity: 0
     bottom: 110px
-
-
-.coin-catch
-  animation: coin-catch 1.25s ease-in-out
-
-.coin-disappearance
-  animation: coin-disappearance .5s ease-in-out
 
 @keyframes result-refresh
   0%
@@ -869,7 +821,6 @@ body
   100%
     height: 120px
 
-
 @keyframes hook-catch2
   0%
     height: 120px
@@ -902,49 +853,39 @@ body
   100%
     left: 155px
 
-.hook-fastering-catch1-down
- animation: fasteners-catch1-down 1.25s ease-in-out
-
-.hook-fastering-catch1-up
-  animation: fasteners-catch1-up 1.25s ease-in-out
-
-.hook-fastering-catch2-down
-  animation: fasteners-catch2-down 1.25s ease-in-out
-
-.hook-fastering-catch2-up
-  animation: fasteners-catch2-up 1.25s ease-in-out
-
-
-
-
-.hook-catch1-down
-  animation: hook-catch1-down 1.25s ease-in-out
-.hook-catch1-up
-  animation: hook-catch1-up 1.25s ease-in-out
-
-.hook-catch2-down
-  animation: hook-catch2-down 1.25s ease-in-out
-.hook-catch2-up
-  animation: hook-catch2-up 1.25s ease-in-out
-
-
-.hook-move-horizontal
-  animation: hook-move-horizontal1 3.5s ease-in-out
-
-@keyframes hook-move-left
-  0%
-    left: 280px
-  100%
-    left: 150px
-
 @keyframes hook-move-horizontal2
   0%
     left: 155px
   100%
     left: 225px
 
+.coin-catch
+  animation: coin-catch 1.25s ease-in-out
+.coin-disappearance
+  animation: coin-disappearance .5s ease-in-out
+.hook-fastering-catch1-down
+ animation: fasteners-catch1-down 1.25s ease-in-out
+.hook-fastering-catch1-up
+  animation: fasteners-catch1-up 1.25s ease-in-out
+.hook-fastering-catch2-down
+  animation: fasteners-catch2-down 1.25s ease-in-out
+.hook-fastering-catch2-up
+  animation: fasteners-catch2-up 1.25s ease-in-out
+.hook-catch1-down
+  animation: hook-catch1-down 1.25s ease-in-out
+.hook-catch1-up
+  animation: hook-catch1-up 1.25s ease-in-out
+.hook-catch2-down
+  animation: hook-catch2-down 1.25s ease-in-out
+.hook-catch2-up
+  animation: hook-catch2-up 1.25s ease-in-out
+.hook-move-horizontal
+  animation: hook-move-horizontal1 3.5s ease-in-out
 .hook-move-horizontal2
   animation: hook-move-horizontal2 1.5s ease-in-out
+
+
+
 
 
 
