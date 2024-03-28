@@ -13,6 +13,7 @@
           width: 1320px
           height: 850px
 
+
 @media screen and (min-width: 2400px)
   .fav-page
     .main
@@ -31,26 +32,56 @@
     .main
       &__banner
         transform: scale(.85)
+        &::before
+          width: 55%
+        &-left
+          //&::before
+          //  top: 20px
+          //  right: 80px
+        &-right
+          &-img
+            width: 353px
+            height: 260px
+            margin-right: 12px
+        &-text
+          &-center
+            font-size: 72px
+            .center-subtext
+              width: 267px
+              height: 67px
+              font-size: 15px
+              line-height: 24.4px
+              top: 84px
+              right: 5px
+            &::after
+              right: -65px
+        &-icons
+          &-right
+            &::before
+              right: -25px
+        &-bottom
+          &-item
+            font-size: 8px
 
 @media screen and (max-width: 1368px)
   .fav-page
     .main
       &__banner
-        &-right
-          &-img
-            width: 383px
-            height: 280px
-            margin-right: 12px
+        &-left
+          &::before
+            right: 17px
         &-bottom
           padding: 0 11%
 
-@media screen and (max-width: 1280px)
+@media screen and (max-width: 1300px)
   .fav-page
     .main
       &__banner
         transform: scale(1.5)
         max-width: 710px
         margin-bottom: 130px
+        &::before
+          content: none
         &-right
           &::after
             background: url("../img/top-decor-tab.svg") no-repeat 0 0/contain
@@ -67,7 +98,7 @@
             width: 101px
             height: 12px
             top: 10px
-            right: 49px
+            right: 0
         &-text
           &-bonus
             font-size: 12px
@@ -76,30 +107,31 @@
             font-size: 14px
             padding: 6px 9px 5px 13px
             clip-path: polygon(4.5% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 33%)
-            span:nth-child(2), span:nth-child(3)
+            span:not(:first-child)
               margin-left: 9px
           &-center
-            font-size: 45px
-            line-height: 42px
+            font-size: 35px
+            line-height: 37px
             .center-subtext
-              font-size: 9px
+              font-size: 7px
               line-height: 11px
-              width: 119px
-              height: 30px
-              padding: 5px 3px 3px 8px
-              top: 3px
-              right: 8px
+              width: 127px
+              height: 32px
+              padding: 5px 3px 3px 6px
+              top: 36px
+              //right: 45px
             &::after
               bottom: auto
-              top: -17px
-              right: -99px
+              top: 130px
+              right: 5px
               width: 39px
               height: 39px
               transform: translate(0, -0)
           &-bottom
+            max-width: 280px
             font-size: 13px
             line-height: 20px
-            margin-top: 11px
+            margin-top: 20px
         &-wrap
           background: url("../img/banner-bg-mob.png") no-repeat 50% 0/cover
           &::before
@@ -150,7 +182,7 @@
             &:nth-child(1), &:nth-child(3)
               display: none
             &:nth-child(2)
-              font-size: 9px
+              font-size: 7px
             &:nth-child(2)::before, &:nth-child(2)::after
               width: 83px
               height: 28px
@@ -199,19 +231,19 @@
     .popup
       &__wrap
         max-width: 345px
-        height: 280px
+        height: 395px
         &::before
           width: 95%
           height: 95%
-          top: 4.5%
+          top: 17.5%
           left: 2.5%
       &__title
         margin-bottom: 18px
       &__btn
         font-size: 16px
-        padding: 19px 36px
+        padding: 15px 23px
     .main
-      background: url("../img/bg-mob.png") no-repeat -3vw 155px/cover
+      background: url("../img/bg-mob.png") no-repeat -3vw 165px/cover
       background-size: 107.2vw 169vw
       &::before
         height: 70px
@@ -223,44 +255,53 @@
         &-wrap
           flex-direction: column
           &::before
-            content: none
+            content: ""
+            top: 0
+            left: 220px
+            height: 2px
+            width: 120px
+            background: $magenta
+
         &-text
           &-bonus
             font-size: 9px
             top: -4px
           &-top
-            padding: 6px 7px 4px 9px
+            padding: 7px 7px 6px 9px
+            font-size: 12px
             clip-path: polygon(3.5% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 26%)
-            span:nth-child(2), span:nth-child(3)
-              margin-left: 7px
+            span:not(:first-child)
+              margin-left: 8px
           &-center
-            font-size: 33px
+            font-size: 28px
             line-height: 33px
             margin-top: 4px
             .center-subtext
-              top: -2px
-              right: -15px
+              top: 30px
+              right: -10px
             &::after
-              top: 42px
-              right: -86px
+              top: -18px
+              right: -69px
           &-bottom
             line-height: 18px
-
+            max-width: 340px
+            margin-top: 14px
         &-left
           padding-bottom: 0
           &::before
             width: 61px
             height: 7px
             top: 10px
-            right: 73px
+            right: 63px
         &-right
           position: static
-          padding: 31px 0 0 0
+          padding: 41px 0 0 0
           justify-content: flex-end
           &::before
             width: 135px
             height: 8px
             top: -6px
+            right: -7px
           &::after
             content: none
           &-img
@@ -285,11 +326,11 @@
             margin-right: 15px
             padding-top: 1px
             &::before
-              width: 345px
-              height: 355px
+              width: 358px
+              height: 365px
               background: url("../img/banner-decor-mob.svg") no-repeat 0 0/contain
               top: 0
-              right: 0
+              right: -8px
             .sport-icon
               width: 22px
               height: 22px
@@ -307,9 +348,14 @@
           &-item
             &:nth-child(2)
               text-align: center
-              max-width: 230px
+              max-width: 270px
+            &:nth-child(2)::before
+              right: -7px
+            &:nth-child(2)::after
+              left: -4px
             &:nth-child(2)::before, &:nth-child(2)::after
-              content: none
+              width: 43px
+              height: 15px
       &__game
         &::before
           content: none
@@ -321,10 +367,10 @@
           padding-top: 0
           &-text
             font-size: 18px
-            line-height: 18px
-            top: 40px
+            line-height: 22px
+            top: 38px
           &-btn
-            padding: 1px 29px
+            padding: 1px 45px
             font-size: 17px
             line-height: 26px
             bottom: 170px
@@ -368,7 +414,7 @@
 @media screen and (max-width: 393px)
   .fav-page
     .main
-      background-position: -3vw 180px
+      background-position: -3vw 190px
 
 @media screen and (max-width: 375px)
   .fav-page
@@ -380,7 +426,7 @@
 @media screen and (max-width: 360px)
   .fav-page
     .main
-      background-position: -3vw 170px
+      background-position: -3vw 180px
       &::before
         bottom: 70px
       &__banner
@@ -399,6 +445,12 @@
     .popup
       &__wrap
         transform: scale(.9)
+      &__list
+        &-item
+          font-size: 17px
+          line-height: 17px
+      &__btn
+        padding: 15px 20px
     .main
       &__banner
         transform: scale(.9)
@@ -416,7 +468,7 @@
 @media screen and (max-width: 337px)
   .fav-page
     .main
-      background-position: -3vw 165px
+      background-position: -3vw 175px
       &__banner
         position: relative
         right: 3px
@@ -429,7 +481,7 @@
   .fav-page
     .main
       &__banner
-        right: 5px
+        right: 7px
       &__game
         &-machine
           right: 27px
@@ -437,8 +489,11 @@
 @media screen and (max-width: 320px)
   .fav-page
     .popup
+      &__list
+        padding-inline-start: 30px
+
       &__btn
-        padding: 18px 25px
+        padding: 15px
     .main
       &__banner
         transform: scale(.85)
@@ -506,21 +561,23 @@
   .fav-page
     .popup
       &__wrap
-        transform: scale(.8)
+        transform: scale(.7)
+        max-width: 425px
+        top: 20px
 
 @media screen and (max-width: 950px) and (orientation: landscape) and (max-height: 350px)
   .fav-page
     .popup
       &__wrap
-        top: 20px
-        transform: scale(.8)
+        top: 25px
+        transform: scale(.65)
 
 @media screen and (max-width: 950px) and (orientation: landscape) and (max-height: 310px)
   .fav-page
     .popup
       &__wrap
-        top: 20px
-        transform: scale(.7)
+        top: 15px
+        transform: scale(.6)
 
 @media screen and (max-width: 750px) and (orientation: landscape) and (max-height: 450px)
   .fav-page

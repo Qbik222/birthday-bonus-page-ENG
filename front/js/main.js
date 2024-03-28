@@ -17,8 +17,8 @@ const FS = document.querySelector(".FS")
 const elemsInsideFS = FS.querySelectorAll("span") //span елементи в які записується результат FS
 const RFB = document.querySelector(".RFB")
 const elemsInsideRFB = RFB.querySelectorAll("span")  //span елементи в які записується результат RFB
-const EUR = document.querySelector(".EUR")
-const elemsInsideEUR = EUR.querySelectorAll("span")  //span елементи в які записується результат EUR
+const RON = document.querySelector(".RON")
+const elemsInsideRON = RON.querySelectorAll("span")  //span елементи в які записується результат RON
 const coin3 = document.querySelector(".coin3") // монетка яка буде спіймана першою
 const coin4 = document.querySelector(".coin4") // монетка яка буде спіймана другою
 let frameCounter = 0 // потрібен для відстежування ключових точок анімації
@@ -57,13 +57,13 @@ coin3.addEventListener("animationend", () =>{ // відстежуємо моме
         elemsInsideFS.forEach( (item, i)  => {
             if( i === 0){
                 item.style.opacity = "0";
-                item.textContent = '1';
+                item.textContent = '5';
                 setTimeout(() =>{item.style.opacity = "1";}, 500)
             }
             if (i === 1){
                 setTimeout(() =>{
                     item.style.opacity = "0";
-                    item.textContent = '5';
+                    item.textContent = '0';
                     setTimeout(() =>{
                         item.style.opacity = "1";
                         hookWrap.classList.add("hook-move-horizontal2"); // ініціюємо анімацію руху до другої монетки
@@ -89,34 +89,34 @@ coin4.addEventListener("animationend", ()=>{
     coin4.classList.add("coin-disappearance")
     coin4.style.opacity = "0"
 
-    // анімація оновлення RFB та EUR на таблиці запускається після завершення анімації зникнення другої монетки
+    // анімація оновлення RFB та RON на таблиці запускається після завершення анімації зникнення другої монетки
     if(frameCounter === 14){
         elemsInsideRFB.forEach( (item, i)  => {
             if( i === 0){
                 item.style.opacity = "0";
-                item.textContent = '1';
+                item.textContent = '2';
                 setTimeout(() =>{item.style.opacity = "1";}, 500)
             }
             if (i === 1){
                 setTimeout(() =>{
                     item.style.opacity = "0";
-                    item.textContent = '0';
+                    item.textContent = '5';
                     setTimeout(() =>{
                         item.style.opacity = "1";
                     }, 500)
                 }, 200)
             }
         })
-        elemsInsideEUR.forEach( (item, i)  => {
+        elemsInsideRON.forEach( (item, i)  => {
             if( i === 0){
                 item.style.opacity = "0";
-                item.textContent = '1';
+                item.textContent = '2';
                 setTimeout(() =>{item.style.opacity = "1";}, 500)
             }
             if (i === 1){
                 setTimeout(() =>{
                     item.style.opacity = "0";
-                    item.textContent = '0';
+                    item.textContent = '5';
                     setTimeout(() =>{
                         item.style.opacity = "1";
                         // приховуємо елементи гри і відображаємо екран закінчення
